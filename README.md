@@ -21,14 +21,14 @@ pip install -r requirements.txt
 ### 2. 모델 실행
 `run.bat` 파일에 프로필 이름을 인자로 주어 실행합니다.
 ```bash
-run.bat qwen2.5-3b-instruct-q4km
+run.bat qwen2.5-3b-instruct-q8_0
 ```
-*(기본적으로 `profiles/qwen2.5-3b-instruct-q4km.yaml` 파일을 찾아 실행합니다)*
+*(기본적으로 `profiles/qwen2.5-3b-instruct-q8_0.yaml` 파일을 찾아 실행합니다)*
 
 ### 3. API 테스트
 모델이 실행 중일 때, 별도의 터미널에서 테스트 스크립트를 실행합니다.
 ```bash
-python scripts/client_test.py --profile qwen2.5-3b-instruct-q4km
+python scripts/client_test.py --profile qwen2.5-3b-instruct-q8_0
 ```
 
 ## 🛠️ 새로운 모델 추가하기
@@ -54,17 +54,3 @@ python scripts/client_test.py --profile qwen2.5-3b-instruct-q4km
 
 - **Ollama 설치**: [ollama.com](https://ollama.com)에서 설치
 - **GGUF 모델**: `models/` 폴더에 `.gguf` 파일을 위치시킨 후 `Modelfile`에서 경로를 참조하세요.
-
-### 💡 GGUF 파일이 여러 개인 경우 (분할형 모델)
-Hugging Face 등에서 다운로드한 모델이 `00001-of-00002.gguf` 처럼 여러 개로 나뉘어 있다면, Ollama에서 사용하기 전 하나로 합쳐야 합니다.
-
-**1. 명령 프롬프트(CMD)에서 실행 시:**
-```cmd
-copy /b model-00001-of-00002.gguf + model-00002-of-00002.gguf model-combined.gguf
-```
-
-**2. PowerShell에서 실행 시:**
-```powershell
-get-content model-00001-of-00002.gguf, model-00002-of-00002.gguf -ReadCount 0 -Encoding byte | set-content model-combined.gguf -Encoding byte
-```
-3. `Modelfile`의 `FROM` 절에는 합쳐진 파일(`model-combined.gguf`)의 경로를 적어줍니다.
