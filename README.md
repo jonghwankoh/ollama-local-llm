@@ -1,6 +1,6 @@
 # Local LLM Hub
 
-다양한 로컬 LLM 엔진(Ollama, vLLM 등)을 통합 관리하고 테스트할 수 있는 확장 가능한 리포지토리입니다.
+다양한 로컬 LLM 모델을 Ollama 엔진을 통해 통합 관리하고 테스트할 수 있는 리포지토리입니다.
 
 ## 📁 디렉토리 구조
 
@@ -45,8 +45,7 @@ python scripts/client_test.py --profile qwen2.5-3b-instruct-q8_0
     ```
 3.  `run.bat my-new-model`로 실행합니다.
 
-### vLLM 등 다른 엔진 추가 (예정)
-`local_llm.py`의 `engine` 분기 로직을 수정하여 새로운 백엔드를 지원하도록 확장 가능합니다.
+---
 
 ---
 
