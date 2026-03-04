@@ -1,0 +1,6 @@
+name: qwen2.5-3b-instruct-q8_0
+engine: ollama
+model_name: qwen2.5-3b-instruct-q8_0
+modelfile: engines/ollama/Qwen2.5-3B-Instruct-Q8_0.Modelfile
+api_base: http://localhost:11434/v1
+api_key: ollama
